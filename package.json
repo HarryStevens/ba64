@@ -1,6 +1,6 @@
 {
   "name": "ba64",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A small npm module for saving base 64 encoded images to your file system.",
   "main": "index.js",
   "scripts": {
