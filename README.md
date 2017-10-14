@@ -1,7 +1,7 @@
 # ba64
 [![Build Status](https://travis-ci.org/HarryStevens/ba64.svg?branch=master)](https://travis-ci.org/HarryStevens/ba64) [![Coverage Status](https://coveralls.io/repos/github/HarryStevens/ba64/badge.svg?branch=master)](https://coveralls.io/github/HarryStevens/ba64?branch=master)
 
-A small npm module for saving Base64 encoded images to your file system.
+A [tiny](https://github.com/sindresorhus/ama/issues/10#issuecomment-117766328) npm module for saving Base64 encoded images that are part of [data URLs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs) to your file system. This is useful for saving images that have been uploaded to the browser via [`FileReader.readAsDataUrl()`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL).
 
 ## Installation
 
