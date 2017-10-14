@@ -19,10 +19,12 @@ describe("#ba64", function(){
 
 		ba64.save(img, "test/img");
 
-		var exists = fs.readdirSync("test").filter(files => files.indexOf("img") != -1).length != 0;
-		expect(exists).to.equal(true);
+		setTimeout(function(){
+			var exists = fs.readdirSync("test").filter(files => files.indexOf("img") != -1).length != 0;
+			expect(exists).to.equal(true);
 
-		fs.unlinkSync("test/img." + ext);
+			fs.unlinkSync("test/img." + ext);	
+		}, 2000);
 
 	});
 
