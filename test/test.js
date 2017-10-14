@@ -24,7 +24,7 @@ describe("#ba64", function(){
 			expect(exists).to.equal(true);
 
 			fs.unlinkSync("test/img." + ext);	
-		}, 2000);
+		}, 100);
 
 	});
 

@@ -8,12 +8,7 @@ function getExt(base64_string){
 // saves a base64 encoded image
 module.exports.save = function(base64_string, file_path){
 	var ext = getExt(base64_string);
-	fs.writeFile(file_path + "." + ext, base64_string.split(";base64,").pop(), {encoding: "base64"}, function(err) {
-	  if (err) {
-			console.log("Error saving " + file_path + "." + ext);
-			throw err;
-		}
-	});
+	fs.writeFileSync(file_path + "." + ext, base64_string.split(";base64,").pop(), {encoding: "base64"});
 }
 
 module.exports.getExt = getExt;
