@@ -16,20 +16,20 @@ npm i ba64 -S
 ## <a name="example" href="#example">Example</a>
 
 ```js
-	var ba64 = require("ba64"),
-		data_url = "data:image/jpeg;base64,[Base64 encoded image goes here]";
+var ba64 = require("ba64"),
+	data_url = "data:image/jpeg;base64,[Base64 encoded image goes here]";
 
-	// Save the image synchronously.
-	ba64.writeImageSync("myimage", data_url); // Saves myimage.jpeg.
+// Save the image synchronously.
+ba64.writeImageSync("myimage", data_url); // Saves myimage.jpeg.
 
-	// Or save the image asynchronously.
-	ba64.writeImage("myimage", data_url, function(err){
-		if (err) throw err;
+// Or save the image asynchronously.
+ba64.writeImage("myimage", data_url, function(err){
+	if (err) throw err;
 
-		console.log("Image saved successfully");
+	console.log("Image saved successfully");
 
-		// do stuff
-	});
+	// do stuff
+});
 ```
 
 ## <a name="api" href="#api">API</a>
