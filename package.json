@@ -17,7 +17,7 @@
     "node"
   ],
   "author": "Harry Stevens <harryjosephstevens@gmail.com> (http://harryjstevens.com/)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/HarryStevens/ba64/issues"
   },
