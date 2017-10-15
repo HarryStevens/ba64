@@ -10,25 +10,23 @@ function getBa64Img(data_url){
 	return data_url.split(";base64,").pop();
 }
 
-// saves a base64 encoded image synchronously
-module.exports.saveSync = function(data_url, file_path){
+module.exports.fs = fs;
 
-	if (!file_path){
-		throw new Error("You must specify a file path as the second argument.");
+// saves a base64 encoded image synchronously
+module.exports.writeImageSync = function(file_path, data_url){
+
+	if (arguments.length < 2){
+		throw new Error("writeImage() requires two arguments. You have only included " + arguments.length);
 	}
 
 	fs.writeFileSync(file_path + "." + getExt(data_url), getBa64Img(data_url), {encoding: "base64"});
 }
 
 // saves a base64 encoded image asynchronously
-module.exports.save = function(data_url, file_path, callback){
+module.exports.writeImage = function(file_path, data_url, callback){
 
-	if (!file_path){
-		throw new Error("You must specify a file path as the second argument.");
-	}
-
-	if (typeof callback == "undefined"){
-		throw new Error("bs64.save() is an asynchronous function and must have a callback as its third parameter.")
+	if (arguments.length < 3){
+		throw new Error("writeImage() requires three arguments. You have only included " + arguments.length);
 	}
 
 	fs.writeFile(file_path + "." + getExt(data_url), getBa64Img(data_url), {encoding: "base64"}, callback);
