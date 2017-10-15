@@ -5,7 +5,7 @@ A tiny npm module for saving Base64 encoded images that are part of [data URLs](
 
 * [Installation](#installation)
 * [Example](#example)
-* [API](#API)
+* [API](#api)
 
 ## <a name="installation" href="#installation">Installation</a>
 
@@ -16,23 +16,23 @@ npm i ba64 -S
 ## <a name="example" href="#example">Example</a>
 
 ```js
-var ba64 = require("ba64"),
-	data_url = "data:image/jpeg;base64,[Base64 encoded image goes here]";
+	var ba64 = require("ba64"),
+		data_url = "data:image/jpeg;base64,[Base64 encoded image goes here]";
 
-// Save the image synchronously.
-ba64.writeImageSync("myimage", data_url); // Saves myimage.jpeg.
+	// Save the image synchronously.
+	ba64.writeImageSync("myimage", data_url); // Saves myimage.jpeg.
 
-// Or save the image asynchronously.
-ba64.writeImage("myimage", data_url, function(err){
-	if (err) throw err;
+	// Or save the image asynchronously.
+	ba64.writeImage("myimage", data_url, function(err){
+		if (err) throw err;
 
-	console.log("Image saved successfully");
+		console.log("Image saved successfully");
 
-	// do stuff
-});
+		// do stuff
+	});
 ```
 
-## API
+## <a name="api" href="#api">API</a>
 
 <a name="writeImage" href="#writeImage">#</a> ba64.**writeImage**(*path/to/file_name*, *data_url*, *callback*)
 
