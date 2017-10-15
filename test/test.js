@@ -50,21 +50,21 @@ describe("#ba64", function(){
 	});
 
 	// errors
-	it("should throw an error when running bs64.writeImageSync() without a file path", function(){
+	it("should throw an error when running bs64.writeImageSync() without data", function(){
 
-		expect(() => ba64.writeImageSync(data_url)).to.throw(Error);
+		expect(() => ba64.writeImageSync("test/img")).to.throw(Error);
 
 	});
 
-	it("should throw an error when running bs64.writeImage() without a file path", function(){
+	it("should throw an error when running bs64.writeImage() without data", function(){
 
-		expect(() => ba64.writeImage(data_url)).to.throw(Error);
+		expect(() => ba64.writeImage("test/img")).to.throw(Error);
 
 	});
 
 	it("should throw an error when running bs64.writeImage() without a callback", function(){
 
-		expect(() => ba64.writeImage(data_url, "path")).to.throw(Error);
+		expect(() => ba64.writeImage("test/img", data_url)).to.throw(Error);
 
 	});
 
