@@ -28,4 +28,4 @@ module.exports.writeImage = function(file_path, data_url, callback){
 
 module.exports.getExt = getExt;
 module.exports.getBa64Img = getBa64Img;
-module.exports.fs = {writeFile: fs.writeFile, writeFile: fs.writeFileSync};
+module.exports.fs = {writeFile: fs.writeFile, writeFileSync: fs.writeFileSync};
