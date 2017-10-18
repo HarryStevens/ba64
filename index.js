@@ -10,8 +10,6 @@ function getBa64Img(data_url){
   return data_url.split(";base64,").pop();
 }
 
-module.exports.fs = fs;
-
 // saves a base64 encoded image synchronously
 module.exports.writeImageSync = function(file_path, data_url){
   if (arguments.length < 2){
@@ -30,3 +28,4 @@ module.exports.writeImage = function(file_path, data_url, callback){
 
 module.exports.getExt = getExt;
 module.exports.getBa64Img = getBa64Img;
+module.exports.fs = {readFile: fs.readFile, readFileSync: fs.readFileSync};
