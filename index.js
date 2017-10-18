@@ -13,7 +13,7 @@ function getBa64Img(data_url){
 // saves a base64 encoded image synchronously
 module.exports.writeImageSync = function(file_path, data_url){
   if (arguments.length < 2){
-    throw new Error("writeImage() requires two arguments. You have only included " + arguments.length);
+    throw new Error("writeImageSync() requires two arguments. You have only included " + arguments.length);
   }
   fs.writeFileSync(file_path + "." + getExt(data_url), getBa64Img(data_url), {encoding: "base64"});
 }
