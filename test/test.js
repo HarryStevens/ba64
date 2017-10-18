@@ -15,39 +15,35 @@ describe("#ba64", function(){
 	});
 
 	it("should save a base64 encoded image to the filesystem synchronously", function(){
-		var ext = ba64.getExt(data_url);
 		ba64.writeImageSync("test/img", data_url);
-		setTimeout(function(){
-			// check and delete it
-			var fs = require("fs");
-			var exists = fs.readdirSync("test").filter(files => files.indexOf("img") != -1).length != 0;
-			expect(exists).to.equal(true);
-			fs.unlinkSync("test/img." + ext);	
-		}, 100);
+		checkAndDelete();
 	});
 
 	it("should save a base64 encoded image to the filesystem asynchronously", function(){
-		var ext = ba64.getExt(data_url);
 		ba64.writeImage("test/img", data_url, function(error, response){
-			// check and delete it
-			var fs = require("fs");
-			var exists = fs.readdirSync("test").filter(files => files.indexOf("img") != -1).length != 0;
-			expect(exists).to.equal(true);
-			fs.unlinkSync("test/img." + ext);	
+			checkAndDelete();
 		});
 	});
 
 	// errors
 	it("should throw an error when running bs64.writeImageSync() without data", function(){
-		expect(() => ba64.writeImageSync("test/img")).to.throw(Error);
+		expect(function(){ ba64.writeImageSync("test/img"); }).to.throw(Error);
 	});
 
 	it("should throw an error when running bs64.writeImage() without data", function(){
-		expect(() => ba64.writeImage("test/img")).to.throw(Error);
+		expect(function(){ ba64.writeImage("test/img"); }).to.throw(Error);
 	});
 
 	it("should throw an error when running bs64.writeImage() without a callback", function(){
-		expect(() => ba64.writeImage("test/img", data_url)).to.throw(Error);
+		expect(function(){ ba64.writeImage("test/img", data_url); }).to.throw(Error);
 	});
 
 });
+
+function checkAndDelete(){
+	var ext = ba64.getExt(data_url);
+	var fs = require("fs");
+	var exists = fs.readdirSync("test").filter(files => files.indexOf("img") != -1).length != 0;
+	expect(exists).to.equal(true);
+	fs.unlinkSync("test/img." + ext);
+}
